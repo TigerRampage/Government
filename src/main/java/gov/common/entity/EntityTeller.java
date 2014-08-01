@@ -2,6 +2,7 @@ package gov.common.entity;
 
 import gov.common.core.GovCore;
 import gov.common.core.GuiList;
+import gov.common.core.Sounds;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -23,18 +24,11 @@ public class EntityTeller extends EntityCreature {
 	public EntityTeller(World w) {
 		super(w);
 		this.setSize(0.6F, 1.8F);
-		this.getNavigator().setBreakDoors(true);
 		this.getNavigator().setAvoidsWater(true);
-		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIServePlayer(this));
 		this.tasks.addTask(1, new EntityAILookAtCustomer(this));
-		this.tasks.addTask(2, new EntityAIMoveIndoors(this));
-        this.tasks.addTask(3, new EntityAIRestrictOpenDoor(this));
-        this.tasks.addTask(4, new EntityAIOpenDoor(this, true));
-        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 0.6D));
 		this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
 		this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityTeller.class, 5.0F, 0.02F));
-        this.tasks.addTask(9, new EntityAIWander(this, 0.6D));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
 	}
 	
@@ -42,7 +36,7 @@ public class EntityTeller extends EntityCreature {
 	protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.0D);
     }
 
     @Override
@@ -74,7 +68,7 @@ public class EntityTeller extends EntityCreature {
     protected void entityInit()
     {
         super.entityInit();
-//        this.dataWatcher.addObject(16, Integer.valueOf(0));
+        this.dataWatcher.addObject(16, Integer.valueOf(0));
     }
     
     @Override
@@ -92,13 +86,13 @@ public class EntityTeller extends EntityCreature {
     @Override
     protected String getHurtSound()
     {
-        return "mob.villager.hit";
+        return Sounds.TELLER_HURT;
     }
 
     @Override
     protected String getDeathSound()
     {
-        return "mob.villager.death";
+        return Sounds.TELLER_DEATH;
     }
 	
 	public boolean isServingCustomer() {

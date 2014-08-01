@@ -1,0 +1,4 @@
+{
+	"teller_death": {"category": "master","sounds": [{"name": "teller_death", "stream": false}]},
+	"teller_hurt": {"category": "master","sounds": [{"name": "teller_hurt", "stream": false}]}
+}

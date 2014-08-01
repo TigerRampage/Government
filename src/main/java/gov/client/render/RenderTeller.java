@@ -2,6 +2,7 @@ package gov.client.render;
 
 import org.lwjgl.opengl.GL11;
 
+import gov.common.core.ResourceFinder;
 import gov.common.entity.EntityTeller;
 import net.minecraft.client.model.ModelVillager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -16,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderTeller extends RenderLiving {
 
-	private static final ResourceLocation farmerVillagerTextures = new ResourceLocation("textures/entity/villager/farmer.png");
+	private static final ResourceLocation tellerSuit = ResourceFinder.getResourceLocation("textures/entity/teller.png");
 	protected ModelVillager villagerModel;
 	
 	public RenderTeller() {
@@ -41,7 +42,7 @@ public class RenderTeller extends RenderLiving {
 	
 	@Override
 	protected ResourceLocation getEntityTexture(Entity e) {
-		return this.farmerVillagerTextures;
+		return this.tellerSuit;
 	}
 	
 	@Override
@@ -62,7 +63,7 @@ public class RenderTeller extends RenderLiving {
 	@Override
 	protected void renderEquippedItems(EntityLivingBase p_77029_1_, float p_77029_2_)
     {
-        this.renderEquippedItems((EntityVillager)p_77029_1_, p_77029_2_);
+        this.renderEquippedItems((EntityTeller)p_77029_1_, p_77029_2_);
     }
 	
 	@Override

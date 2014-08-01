@@ -1,5 +1,8 @@
 package gov.common.core;
 
+import gov.proxy.CommonProxy;
+import gov.proxy.IProxy;
+
 import org.apache.logging.log4j.Level;
 
 import cpw.mods.fml.common.Mod;
@@ -13,8 +16,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = GovData.modID, name = GovData.modName, version = GovData.version)
 public class GovCore {
 
-	@SidedProxy(clientSide = "gov.client.core.ClientProxy", serverSide = "gov.common.core.ServerProxy")
-	public static ServerProxy proxy;
+	@SidedProxy(clientSide = "gov.proxy.ClientProxy", serverSide = "gov.proxy.ServerProxy")
+	public static IProxy proxy;
 
 	@Instance(GovData.modID)
 	public static GovCore instance = new GovCore();
