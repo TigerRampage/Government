@@ -1,4 +1,6 @@
-package gov.common.core;
+package gov.reference;
+
+import gov.common.core.GovData;
 
 public class Sounds {
 	private static final String PREFIX = GovData.modID.toLowerCase() + ":";

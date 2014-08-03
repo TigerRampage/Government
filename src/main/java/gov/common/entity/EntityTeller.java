@@ -1,8 +1,8 @@
 package gov.common.entity;
 
 import gov.common.core.GovCore;
-import gov.common.core.GuiList;
-import gov.common.core.Sounds;
+import gov.reference.GuiList;
+import gov.reference.Sounds;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -68,6 +68,7 @@ public class EntityTeller extends EntityCreature {
     protected void entityInit()
     {
         super.entityInit();
+        this.setCustomNameTag(TellerNames.getRandomName());
         this.dataWatcher.addObject(16, Integer.valueOf(0));
     }
     

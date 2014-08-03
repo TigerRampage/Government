@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import gov.common.core.ResourceFinder;
 import gov.common.entity.EntityTeller;
+import gov.reference.Textures;
 import net.minecraft.client.model.ModelVillager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
@@ -17,7 +18,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderTeller extends RenderLiving {
 
-	private static final ResourceLocation tellerSuit = ResourceFinder.getResourceLocation("textures/entity/teller.png");
+	private static final ResourceLocation tellerSuit = Textures.Entity.TELLER;
 	protected ModelVillager villagerModel;
 	
 	public RenderTeller() {

@@ -1,7 +1,10 @@
 package gov.common.core;
 
+import gov.common.block.BlockList;
+import gov.common.entity.EntityRegisters;
 import gov.proxy.CommonProxy;
 import gov.proxy.IProxy;
+import gov.reference.Names;
 
 import org.apache.logging.log4j.Level;
 
@@ -25,15 +28,8 @@ public class GovCore {
 	@EventHandler
 	private void preInit(FMLPreInitializationEvent fmlpie) {
 		GovLogger.log(Level.INFO, GovData.modName + " Version " + GovData.version + " loading...");
-		this.registerEntities();
-		this.render();
-	}
-
-	public void registerEntities() {
-		EntityRegisters.registerEntities(new EntityNames());
-	}
-
-	public void render() {
+		BlockList.initBlocks();
+		EntityRegisters.registerEntities();
 		this.proxy.renderEntities();
 	}
 

@@ -2,3 +2,6 @@
 
 # ENTITY LOCALIZATION
 entity.teller.name=Teller
+
+# BLOCK LOCALIZATION
+tile.govmod:atm.name=ATM
