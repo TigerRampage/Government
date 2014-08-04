@@ -55,7 +55,7 @@ public class EntityTeller extends EntityCreature {
     	if (this.isEntityAlive() && !this.isServingCustomer() && !ep.isSneaking()) {
     		if (!this.worldObj.isRemote) {
     			this.setCustomer(ep);
-    			ep.openGui(GovCore.instance, GuiList.TELLER_MENU, this.worldObj, 0, 0, 0);
+    			ep.openGui(GovCore.instance, GuiList.TELLER_MENU.ordinal(), this.worldObj, 0, 0, 0);
     		}
     		return true;
     	}

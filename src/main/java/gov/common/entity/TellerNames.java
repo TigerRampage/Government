@@ -32,7 +32,7 @@ public class TellerNames {
 		names.add("Kwame");
 		names.add("Shaniqua");
 		names.add("Latifah");
-		names.add("V\'Lanta\'la\'mana\'ma\'nisha");
+		names.add("Vlantalamanamanisha");
 		names.add("Dequayquay");
 		names.add("Tyrone");
 		names.add("Kanye");
