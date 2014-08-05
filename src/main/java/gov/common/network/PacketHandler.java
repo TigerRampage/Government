@@ -1,6 +1,6 @@
 package gov.common.network;
 
-import gov.common.core.GovData;
+import gov.reference.GovData;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 

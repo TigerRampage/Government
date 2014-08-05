@@ -68,7 +68,7 @@ public class EntityTeller extends EntityCreature {
     protected void entityInit()
     {
         super.entityInit();
-        this.setCustomNameTag(TellerNames.getRandomName());
+        this.setCustomNameTag(NPCNames.getRandomName());
         this.dataWatcher.addObject(16, Integer.valueOf(0));
     }
     

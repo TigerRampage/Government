@@ -1,5 +1,9 @@
 package gov.proxy;
 
+import java.io.File;
+
+import net.minecraft.client.Minecraft;
+
 import gov.client.core.ClientSoundHelper;
 import gov.client.render.RenderTeller;
 import gov.common.entity.EntityTeller;
@@ -15,5 +19,10 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void playSound(String soundName, float x, float y, float z, float volume, float pitch) {
 		ClientSoundHelper.playSound(soundName, x, y, z, volume, pitch);
+	}
+
+	@Override
+	public File getMinecraftDir() {
+		return Minecraft.getMinecraft().mcDataDir;
 	}
 }

@@ -1,5 +1,6 @@
 package gov.common.block;
 
+import gov.common.tab.GovTabs;
 import gov.reference.Textures;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,6 +16,7 @@ public class GovBlock extends Block {
 	
 	public GovBlock(Material m) {
 		super(m);
+		this.setCreativeTab(GovTabs.GOV_MACH_TAB);
 	}
 	
 	

@@ -1,5 +1,6 @@
 package gov.reference;
 
 public enum GuiList {
-	TELLER_MENU;
+	TELLER_MENU,
+	ATM_MENU;
 }

@@ -1,6 +1,6 @@
 package gov.common.block;
 
-import gov.common.core.GovData;
+import gov.reference.GovData;
 import gov.reference.Names;
 import cpw.mods.fml.common.registry.GameRegistry;
 

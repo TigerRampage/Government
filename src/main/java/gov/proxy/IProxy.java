@@ -1,5 +1,7 @@
 package gov.proxy;
 
+import java.io.File;
+
 public interface IProxy {
 
 	/**
@@ -9,12 +11,17 @@ public interface IProxy {
 	
 	/**
 	 * Play a sound.
-	 * @param soundName 
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param volume
-	 * @param pitch
+	 * @param soundName Name of sound
+	 * @param x X coord to play at
+	 * @param y Y coord to play at
+	 * @param z Z coord to play at
+	 * @param volume Volume of sound
+	 * @param pitch Pitch of sound
 	 */
 	public abstract void playSound(String soundName, float x, float y, float z, float volume, float pitch);
+	
+	/**
+	 * Retrieve the Minecraft directory
+	 */
+	public abstract File getMinecraftDir();
 }

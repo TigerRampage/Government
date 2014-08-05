@@ -13,4 +13,10 @@ public class Names {
 		
 		TELLER = "teller";
 	}
+	
+	public static final class Tab {
+		public static final String
+		
+		MACHINE_TAB = "machines";
+	}
 }

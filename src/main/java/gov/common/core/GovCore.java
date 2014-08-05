@@ -4,6 +4,7 @@ import gov.common.block.BlockList;
 import gov.common.entity.EntityRegisters;
 import gov.proxy.CommonProxy;
 import gov.proxy.IProxy;
+import gov.reference.GovData;
 import gov.reference.Names;
 
 import org.apache.logging.log4j.Level;
@@ -19,7 +20,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = GovData.modID, name = GovData.modName, version = GovData.version)
 public class GovCore {
 
-	@SidedProxy(clientSide = "gov.proxy.ClientProxy", serverSide = "gov.proxy.ServerProxy")
+	@SidedProxy(clientSide = GovData.clientProxy, serverSide = GovData.serverProxy)
 	public static IProxy proxy;
 
 	@Instance(GovData.modID)
@@ -27,14 +28,16 @@ public class GovCore {
 
 	@EventHandler
 	private void preInit(FMLPreInitializationEvent fmlpie) {
-		GovLogger.log(Level.INFO, GovData.modName + " Version " + GovData.version + " loading...");
+		GovLogger.log(Level.INFO, "===================== " + GovData.modName.toUpperCase() + " " + GovData.version + " LOADING =====================");
+		GovLogger.log(Level.INFO, "Thank you for downloading Government! Government is developed by ISQUISHALL, Andy608, dmanzawsome, and ice812.");
+		ConfigNPC.setupNPCConfig(fmlpie);
 		BlockList.initBlocks();
 		EntityRegisters.registerEntities();
 		this.proxy.renderEntities();
 	}
 
 	@EventHandler
-	private void load(FMLInitializationEvent fmlie) {
+	private void init(FMLInitializationEvent fmlie) {
 	}
 
 	@EventHandler
