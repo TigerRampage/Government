@@ -17,4 +17,6 @@ public class ServerProxy extends CommonProxy {
 		return FMLCommonHandler.instance().getMinecraftServerInstance().getFile("");
 	}
 
+	@Override
+	public void registerOverlay() {}
 }

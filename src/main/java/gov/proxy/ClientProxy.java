@@ -1,13 +1,17 @@
 package gov.proxy;
 
+import gov.client.core.ClientSoundHelper;
+import gov.client.gui.IngameOverlay;
+import gov.client.render.RenderTeller;
+import gov.common.entity.EntityTeller;
+
 import java.io.File;
 
 import net.minecraft.client.Minecraft;
-
-import gov.client.core.ClientSoundHelper;
-import gov.client.render.RenderTeller;
-import gov.common.entity.EntityTeller;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ClientProxy extends CommonProxy {
 
@@ -24,5 +28,11 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public File getMinecraftDir() {
 		return Minecraft.getMinecraft().mcDataDir;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerOverlay() {
+		MinecraftForge.EVENT_BUS.register(new IngameOverlay());
 	}
 }

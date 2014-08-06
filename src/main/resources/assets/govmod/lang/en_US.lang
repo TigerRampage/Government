@@ -8,3 +8,9 @@ tile.govmod:atm.name=ATM
 
 # TAB LOCALIZATION
 itemGroup.machines=Government Machines
+
+# CONTAINER LOCALIZATION
+container.gov:atm.title=ATM
+container.gov:atm.deposit=Deposit
+container.gov:atm.withdrawal=Withdrawal
+container.gov:atm.log=Transaction Log

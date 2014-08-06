@@ -24,4 +24,8 @@ public interface IProxy {
 	 * Retrieve the Minecraft directory
 	 */
 	public abstract File getMinecraftDir();
+	
+	public abstract void registerTileEntities();
+	
+	public abstract void registerOverlay();
 }

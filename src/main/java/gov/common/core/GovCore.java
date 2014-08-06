@@ -2,10 +2,9 @@ package gov.common.core;
 
 import gov.common.block.BlockList;
 import gov.common.entity.EntityRegisters;
-import gov.proxy.CommonProxy;
+import gov.common.tileentity.GuiHandler;
 import gov.proxy.IProxy;
 import gov.reference.GovData;
-import gov.reference.Names;
 
 import org.apache.logging.log4j.Level;
 
@@ -16,6 +15,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = GovData.modID, name = GovData.modName, version = GovData.version)
 public class GovCore {
@@ -38,6 +38,9 @@ public class GovCore {
 
 	@EventHandler
 	private void init(FMLInitializationEvent fmlie) {
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+		proxy.registerTileEntities();
+		proxy.registerOverlay();
 	}
 
 	@EventHandler
